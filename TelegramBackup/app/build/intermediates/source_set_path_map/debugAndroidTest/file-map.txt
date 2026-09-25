@@ -1,0 +1,4 @@
+com.hanek.telegrambackup.test.app-androidTest-0 F:\HANEK\TelegramBackup\app\build\generated\res\resValues\androidTest\debug
+com.hanek.telegrambackup.test.app-mergeDebugAndroidTestResources-1 F:\HANEK\TelegramBackup\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.hanek.telegrambackup.test.app-mergeDebugAndroidTestResources-2 F:\HANEK\TelegramBackup\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.hanek.telegrambackup.test.app-merged_res-3 F:\HANEK\TelegramBackup\app\build\intermediates\merged_res\debugAndroidTest
