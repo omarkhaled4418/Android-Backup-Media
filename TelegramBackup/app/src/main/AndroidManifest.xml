@@ -30,5 +30,10 @@
             </intent-filter>
         </activity>
 
+        <service
+            android:name=".service.BackupService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
     </application>
 </manifest>

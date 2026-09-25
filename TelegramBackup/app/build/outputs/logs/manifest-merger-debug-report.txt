@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-34:12
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-39:12
 MERGED from [io.coil-kt:coil-video:2.5.0] C:\Users\omar\.gradle\caches\transforms-3\b4e2398432b8e05416927cbed8df2e60\transformed\coil-video-2.5.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.work:work-runtime-ktx:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\be345c02a9ce3c8e8764329aa75eff90\transformed\work-runtime-ktx-2.9.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:17:1-145:12
@@ -116,8 +116,8 @@ ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:11:5-87
 	android:name
 		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:11:22-84
 application
-ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:13:5-33:19
-INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:13:5-33:19
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:13:5-38:19
+INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:13:5-38:19
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:28:5-143:19
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:28:5-143:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.3] C:\Users\omar\.gradle\caches\transforms-3\bd0d9bb32aed0cfc3d28dacc371f9fe3\transformed\ui-test-manifest-1.6.3\AndroidManifest.xml:22:5-26:19
@@ -176,6 +176,14 @@ category#android.intent.category.LAUNCHER
 ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:29:17-77
 	android:name
 		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:29:27-74
+service#com.hanek.telegrambackup.service.BackupService
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:33:9-36:56
+	android:exported
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:35:13-37
+	android:foregroundServiceType
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:36:13-53
+	android:name
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:34:13-50
 uses-sdk
 INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml

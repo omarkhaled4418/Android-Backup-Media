@@ -75,9 +75,8 @@ class TelegramApi(private val context: Context) {
     }
 
     /**
-     * Efficiently compresses an image to ~2560px max dimension and 85% JPEG.
-     * Preserves EXIF orientation so photos are not rotated.
-     * Drastically reduces upload bandwidth by 80-90% with indistinguishable visual quality.
+     * Compresses an image to ~1280px max dimension and 60% JPEG for a smaller,
+     * faster upload (lower quality on purpose). Preserves EXIF orientation.
      */
     private fun compressPhoto(uri: Uri): ByteArray? {
         return try {
@@ -90,7 +89,7 @@ class TelegramApi(private val context: Context) {
 
             if (boundsOptions.outWidth <= 0 || boundsOptions.outHeight <= 0) return null
 
-            val maxDimension = 2560
+            val maxDimension = 1280
             var inSampleSize = 1
             var w = boundsOptions.outWidth
             var h = boundsOptions.outHeight
@@ -138,7 +137,7 @@ class TelegramApi(private val context: Context) {
             }
 
             val outputStream = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 85, outputStream)
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 60, outputStream)
             bitmap.recycle()
             outputStream.toByteArray()
         } catch (e: Exception) {
@@ -312,6 +311,7 @@ class TelegramApi(private val context: Context) {
         chatId: String,
         mediaItem: MediaItem
     ): TelegramResult = withContext(Dispatchers.IO) {
+        // Videos are uploaded as-is (no transcoding) to keep the backup fast.
         sendFile(botToken, chatId, mediaItem, "sendVideo", "video")
     }
 

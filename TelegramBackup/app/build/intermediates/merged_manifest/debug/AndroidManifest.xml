@@ -48,6 +48,11 @@
             </intent-filter>
         </activity>
 
+        <service
+            android:name="com.hanek.telegrambackup.service.BackupService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.hanek.telegrambackup.androidx-startup"

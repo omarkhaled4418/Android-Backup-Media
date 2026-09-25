@@ -20,9 +20,10 @@ class TelegramBackupApp : Application() {
         val channel = NotificationChannel(
             CHANNEL_ID,
             CHANNEL_NAME,
-            NotificationManager.IMPORTANCE_DEFAULT
+            NotificationManager.IMPORTANCE_MIN
         ).apply {
-            description = "Shows backup notifications and alerts"
+            description = "Required for background backup"
+            setShowBadge(false)
         }
         val notificationManager = getSystemService(NotificationManager::class.java)
         notificationManager.createNotificationChannel(channel)
