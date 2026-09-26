@@ -4,6 +4,10 @@ import android.app.Notification
 import android.app.Service
 import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.net.Network
+import android.net.NetworkCapabilities
+import android.net.NetworkRequest
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
@@ -20,6 +24,7 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.ensureActive
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -49,7 +54,16 @@ class BackupService : Service() {
     private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
     private var job: Job? = null
 
+    /** true = internet available, false = offline. The backup loop checks this before each upload. */
+    private val isOnline = MutableStateFlow(true)
+    private var networkCallback: ConnectivityManager.NetworkCallback? = null
+
     override fun onBind(intent: Intent?): IBinder? = null
+
+    override fun onCreate() {
+        super.onCreate()
+        registerNetworkListener()
+    }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         if (intent?.action == ACTION_STOP) {
@@ -58,7 +72,6 @@ class BackupService : Service() {
             return START_NOT_STICKY
         }
 
-        // Android requires a notification for foreground services — keep it minimal and silent.
         startForeground(NOTIF_ID, buildSilentNotification())
 
         if (job?.isActive == true) {
@@ -74,6 +87,64 @@ class BackupService : Service() {
         }
         return START_STICKY
     }
+
+    // ─── Network listener ───────────────────────────────────────────────
+
+    private fun registerNetworkListener() {
+        val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+        // Set the initial state.
+        val active = cm.activeNetwork
+        val caps = if (active != null) cm.getNetworkCapabilities(active) else null
+        isOnline.value = caps?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET) == true
+
+        val request = NetworkRequest.Builder()
+            .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+            .build()
+
+        val callback = object : ConnectivityManager.NetworkCallback() {
+            override fun onAvailable(network: Network) {
+                isOnline.value = true
+            }
+
+            override fun onLost(network: Network) {
+                // Only mark offline if there really is no other network.
+                val stillConnected = cm.activeNetwork?.let {
+                    cm.getNetworkCapabilities(it)
+                        ?.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+                } ?: false
+                isOnline.value = stillConnected
+            }
+        }
+        cm.registerNetworkCallback(request, callback)
+        networkCallback = callback
+    }
+
+    private fun unregisterNetworkListener() {
+        networkCallback?.let {
+            val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            try { cm.unregisterNetworkCallback(it) } catch (_: Exception) {}
+        }
+        networkCallback = null
+    }
+
+    /**
+     * Suspends until internet is available. If already online, returns immediately.
+     * Updates the shared BackupState so the UI can show "Waiting for internet…".
+     */
+    private suspend fun waitForInternet() {
+        if (isOnline.value) return
+        BackupState.flow.update {
+            it.copy(currentUploadName = "⏸ Waiting for internet…")
+        }
+        // Suspend here until isOnline becomes true.
+        isOnline.first { it }
+        BackupState.flow.update {
+            it.copy(currentUploadName = "Resuming…")
+        }
+    }
+
+    // ─── Backup loop ────────────────────────────────────────────────────
 
     private suspend fun runBackup() {
         val prefs = PreferencesManager(applicationContext)
@@ -122,6 +193,7 @@ class BackupService : Service() {
         try {
             for ((batchIndex, batch) in batches.withIndex()) {
                 currentCoroutineContext().ensureActive()
+                waitForInternet()
 
                 val label = if (batch.size > 1) {
                     "Album ${batchIndex + 1}/${batches.size} (${batch.size} files)"
@@ -135,6 +207,7 @@ class BackupService : Service() {
 
                 while (!batchSuccess && retryCount < 3) {
                     currentCoroutineContext().ensureActive()
+                    waitForInternet()
 
                     val result = if (batch.size > 1) {
                         api.sendMediaGroup(token, chatId, batch)
@@ -156,9 +229,17 @@ class BackupService : Service() {
                             retryCount++
                         }
                         is TelegramResult.Error -> {
+                            // Network error → wait for internet and retry instead of counting it.
+                            if (result.message.contains("Network error", ignoreCase = true)) {
+                                waitForInternet()
+                                delay(2000)
+                                retryCount++
+                                continue
+                            }
                             if (batch.size > 1) {
                                 for (item in batch) {
                                     currentCoroutineContext().ensureActive()
+                                    waitForInternet()
                                     when (val single = api.sendMediaItem(token, chatId, item)) {
                                         is TelegramResult.Success -> {
                                             prefs.markAsBackedUp(item.uri.toString())
@@ -177,7 +258,20 @@ class BackupService : Service() {
                                             }
                                         }
                                         is TelegramResult.Error -> {
-                                            errors.add("${item.displayName}: ${single.message}")
+                                            if (single.message.contains("Network error", ignoreCase = true)) {
+                                                waitForInternet()
+                                                delay(2000)
+                                                val retry = api.sendMediaItem(token, chatId, item)
+                                                if (retry is TelegramResult.Success) {
+                                                    prefs.markAsBackedUp(item.uri.toString())
+                                                    uploaded++
+                                                    BackupState.flow.update { it.copy(uploadProgress = uploaded) }
+                                                } else {
+                                                    errors.add("${item.displayName}: ${(retry as? TelegramResult.Error)?.message ?: "Failed"}")
+                                                }
+                                            } else {
+                                                errors.add("${item.displayName}: ${single.message}")
+                                            }
                                         }
                                     }
                                 }
@@ -231,12 +325,12 @@ class BackupService : Service() {
     }
 
     override fun onDestroy() {
+        unregisterNetworkListener()
         job?.cancel()
         scope.cancel()
         super.onDestroy()
     }
 
-    /** Minimal silent notification — Android requires one for foreground services. */
     private fun buildSilentNotification(): Notification {
         return NotificationCompat.Builder(this, TelegramBackupApp.CHANNEL_ID)
             .setContentTitle("Backup running")

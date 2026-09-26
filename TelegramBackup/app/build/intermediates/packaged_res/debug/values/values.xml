@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="ic_launcher_background">#0088CC</color>
-    <string name="app_name">102</string>
+    <string name="app_name">Koloko 2w4ad</string>
     <style name="Theme.TelegramBackup" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>

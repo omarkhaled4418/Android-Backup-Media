@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-39:12
-INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-39:12
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:2:1-57:12
 MERGED from [io.coil-kt:coil-video:2.5.0] C:\Users\omar\.gradle\caches\transforms-3\b4e2398432b8e05416927cbed8df2e60\transformed\coil-video-2.5.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.work:work-runtime-ktx:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\be345c02a9ce3c8e8764329aa75eff90\transformed\work-runtime-ktx-2.9.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:17:1-145:12
@@ -91,33 +91,45 @@ uses-permission#android.permission.INTERNET
 ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:5:5-67
 	android:name
 		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:6:5-79
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:5-79
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:6:22-76
 uses-permission#android.permission.READ_MEDIA_IMAGES
-ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:6:5-76
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:7:5-76
 	android:name
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:6:22-73
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:7:22-73
 uses-permission#android.permission.READ_MEDIA_VIDEO
-ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:7:5-75
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:8:5-75
 	android:name
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:7:22-72
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:8:22-72
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:8:5-9:38
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:9:5-10:38
 	android:maxSdkVersion
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:10:9-35
 	android:name
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:8:22-77
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:9:22-77
 uses-permission#android.permission.FOREGROUND_SERVICE
-ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:10:5-77
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:11:5-77
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:26:5-77
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:26:5-77
 	android:name
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:10:22-74
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:11:22-74
 uses-permission#android.permission.FOREGROUND_SERVICE_DATA_SYNC
-ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:11:5-87
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:12:5-87
 	android:name
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:11:22-84
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:12:22-84
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:13:5-81
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:5-81
+MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:5-81
+	android:name
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:13:22-78
 application
-ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:13:5-38:19
-INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:13:5-38:19
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:15:5-56:19
+INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:15:5-56:19
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:28:5-143:19
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:28:5-143:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.6.3] C:\Users\omar\.gradle\caches\transforms-3\bd0d9bb32aed0cfc3d28dacc371f9fe3\transformed\ui-test-manifest-1.6.3\AndroidManifest.xml:22:5-26:19
@@ -143,47 +155,71 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\omar\.gradle\cache
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] C:\Users\omar\.gradle\caches\transforms-3\3a3c9da51d997344f60b63d58c3e81b4\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:19:9-35
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:21:9-35
 	android:label
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:18:9-41
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:20:9-41
 	tools:targetApi
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:21:9-29
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:23:9-29
 	android:largeHeap
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:16:9-33
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:18:9-33
 	android:icon
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:17:9-43
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:19:9-43
 	android:allowBackup
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:15:9-35
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:17:9-35
 	android:theme
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:20:9-52
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:22:9-52
 	android:name
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:14:9-42
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:16:9-42
 activity#com.hanek.telegrambackup.ui.MainActivity
-ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:23:9-31:20
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:25:9-28:59
 	android:exported
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:25:13-36
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:27:13-36
 	android:theme
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:26:13-56
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:28:13-56
 	android:name
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:24:13-44
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:27:13-30:29
-action#android.intent.action.MAIN
-ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:28:17-69
-	android:name
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:28:25-66
-category#android.intent.category.LAUNCHER
-ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:29:17-77
-	android:name
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:29:27-74
-service#com.hanek.telegrambackup.service.BackupService
-ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:33:9-36:56
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:26:13-44
+activity-alias#com.hanek.telegrambackup.LauncherAlias
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:31:9-40:26
+	android:enabled
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:35:13-35
 	android:exported
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:35:13-37
-	android:foregroundServiceType
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:36:13-53
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:34:13-36
+	android:targetActivity
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:33:13-54
 	android:name
-		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:34:13-50
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:32:13-42
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:36:13-39:29
+action#android.intent.action.MAIN
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:37:17-69
+	android:name
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:37:25-66
+category#android.intent.category.LAUNCHER
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:38:17-77
+	android:name
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:38:27-74
+service#com.hanek.telegrambackup.service.BackupService
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:42:9-45:56
+	android:exported
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:44:13-37
+	android:foregroundServiceType
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:45:13-53
+	android:name
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:43:13-50
+receiver#com.hanek.telegrambackup.service.BootReceiver
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:47:9-54:20
+	android:enabled
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:50:13-35
+	android:exported
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:49:13-36
+	android:name
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:48:13-49
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:51:13-53:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:52:17-79
+	android:name
+		ADDED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml:52:25-76
 uses-sdk
 INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\HANEK\TelegramBackup\app\src\main\AndroidManifest.xml
@@ -342,14 +378,6 @@ uses-permission#android.permission.WAKE_LOCK
 ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:5-68
 	android:name
 		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:23:22-65
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:5-79
-	android:name
-		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:24:22-76
-uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:5-81
-	android:name
-		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:25:22-78
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:29:9-37:20
 MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\omar\.gradle\caches\transforms-3\ef2cb111a729901fa3226a8e26b183f5\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
@@ -526,10 +554,6 @@ ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\trans
 		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:111:13-88
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.TIMEZONE_CHANGED+action:name:android.intent.action.TIME_SET
 ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:116:13-120:29
-action#android.intent.action.BOOT_COMPLETED
-ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:117:17-79
-	android:name
-		ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:117:25-76
 action#android.intent.action.TIME_SET
 ADDED from [androidx.work:work-runtime:2.9.0] C:\Users\omar\.gradle\caches\transforms-3\9fc415e7e5d785cd2518834c52a810b9\transformed\work-runtime-2.9.0\AndroidManifest.xml:118:17-73
 	android:name
